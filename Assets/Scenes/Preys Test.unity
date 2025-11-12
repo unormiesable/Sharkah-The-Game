@@ -336,7 +336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8770572796451045422, guid: 0f8cc627bbff6274db14abe0300d8b8d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -925,6 +925,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3926922702061946123, guid: ca9949fd3ed47bd43917aa5a3dab7bf4, type: 3}
+      propertyPath: maxTailEmissionRate
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3926922702061946123, guid: ca9949fd3ed47bd43917aa5a3dab7bf4, type: 3}
+      propertyPath: minTailEmissionRate
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4138877488060750206, guid: ca9949fd3ed47bd43917aa5a3dab7bf4, type: 3}
       propertyPath: m_Name
       value: Shark 1
@@ -993,7 +1001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9138509980443313422, guid: 702271c5aaaa9ac40a37c7843b89e0bc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1148,7 +1156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3470548762765569916, guid: b1bce7d7da4fe674580c9a706cafd781, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8800523741533209128, guid: b1bce7d7da4fe674580c9a706cafd781, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1310,7 +1318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6402080613748022097, guid: dc7819c8f70d6c54a855bb5d5a06dc70, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1381,7 +1389,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5338895324198292484, guid: 96eb995d2028f514c85049818f442b83, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1407,7 +1415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2975377431192919039, guid: ef5f06f4c3714de4aa5c06f1b602d430, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3116605606591022198, guid: ef5f06f4c3714de4aa5c06f1b602d430, type: 3}
       propertyPath: m_LocalPosition.x

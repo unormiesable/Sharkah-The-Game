@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Sharkah.sln"
+    "dotnet.defaultSolution": "Sharkah-The-Game.sln"
 }
