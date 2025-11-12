@@ -76,6 +76,13 @@ public class SharkController : MonoBehaviour
     public float minEatingVolume = 0.8f;
     public float maxEatingVolume = 1f;
 
+    [Header("PARTICLE SYSTEMS")]
+    public ParticleSystem eatingParticles;
+    public ParticleSystem tailParticles;
+    public float minTailEmissionRate = 5f;
+    public float maxTailEmissionRate = 100f;
+    private ParticleSystem.EmissionModule tailEmissionModule;
+
 
     private Vector3 targetEulerAngles;
     private float initialRoll;
@@ -89,7 +96,13 @@ public class SharkController : MonoBehaviour
     void Start()
     {
         Debug.Log("Shark Controller Detected");
+        SharkInitialize();
+        SetupParticleEffects();
+    }
 
+
+    void SharkInitialize()
+    {
         rb = GetComponent<Rigidbody>();
         if (rb != null)
         {
@@ -98,7 +111,6 @@ public class SharkController : MonoBehaviour
         }
         
         startLocalPosition = TailAim.transform.localPosition; 
-        
         targetEulerAngles = transform.eulerAngles;
         initialRoll = targetEulerAngles.z;
         isFacingRight = Mathf.Abs(targetEulerAngles.y - leftAngle) > 90f;
@@ -111,7 +123,18 @@ public class SharkController : MonoBehaviour
         {
             jawDampedTransform = JawAim.GetComponent<DampedTransform>();
         }
-        searchTimer = preySearchInterval; 
+        searchTimer = preySearchInterval;
+    }
+
+
+    void SetupParticleEffects()
+    {
+        if (tailParticles != null)
+        {
+            tailEmissionModule = tailParticles.emission;
+            tailEmissionModule.rateOverTime = minTailEmissionRate;
+            tailParticles.Play();
+        }
     }
 
 
@@ -132,6 +155,7 @@ public class SharkController : MonoBehaviour
             FindClosestPrey();
         }
     }
+
 
     void FixedUpdate()
     {
@@ -227,7 +251,18 @@ public class SharkController : MonoBehaviour
         float oscillation = Mathf.Sin(tailPhase) * amplitude;
 
         Vector3 offset = moveAxis.normalized * oscillation;
-        TailAim.transform.localPosition = startLocalPosition + offset; 
+        TailAim.transform.localPosition = startLocalPosition + offset;
+
+        if (tailParticles != null)
+        {
+            float currentEmissionRate = Mathf.Lerp(
+                minTailEmissionRate, 
+                maxTailEmissionRate, 
+                speedPercent
+            );
+            
+            tailEmissionModule.rateOverTime = currentEmissionRate;
+        }
     }
 
 
@@ -346,6 +381,7 @@ public class SharkController : MonoBehaviour
             currentPreyTarget = null;
         }
         Destroy(preyObject);
+        eatingParticles.Play();
         PlayEatingAudio();
     }
 

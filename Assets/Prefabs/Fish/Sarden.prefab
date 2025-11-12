@@ -462,7 +462,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
-  m_CullingMode: 0
+  m_CullingMode: 2
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -582,6 +582,8 @@ MonoBehaviour:
   tailMaxSpeed: 5
   amplitude: 0.5
   moveAxis: {x: 1, y: 0, z: 0}
+  fishMeshObject: {fileID: 0}
+  cullAnimator: 1
 --- !u!4 &4591986751168517627 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 592997160360243468, guid: d2216fc4b2f463848a2c0f26226b5048, type: 3}

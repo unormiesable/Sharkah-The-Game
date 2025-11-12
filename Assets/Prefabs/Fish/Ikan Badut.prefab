@@ -414,7 +414,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
-  m_CullingMode: 0
+  m_CullingMode: 2
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -474,6 +474,8 @@ MonoBehaviour:
   tailMaxSpeed: 3
   amplitude: 0.3
   moveAxis: {x: 1, y: 0, z: 0}
+  fishMeshObject: {fileID: 0}
+  cullAnimator: 1
 --- !u!65 &3192798430941338472
 BoxCollider:
   m_ObjectHideFlags: 0
